@@ -9,4 +9,7 @@ print('////////////////////////////// separation\\\\\\\\\\\\\\\\\\\\\\\\')
 # retriving books by author name
 retrieve_book("'Thermodynamics'")
 
+print('/////////////////////////////separation\\\\\\\\\\\\\\\\\\\\\\\\')
+
+# inserting data test
 creating_data("'Macbeth'", "'Shakespare'", "'1990-02-21'")
