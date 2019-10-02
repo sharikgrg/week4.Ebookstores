@@ -1,15 +1,16 @@
 from connecting_SQLdb import *
 
-# def retrieve_all_books():
-#     table = (cursor.execute("SELECT * FROM books")).fetchall()
-#     for list in table:
-#         print (list)
+
 
 def retrieve_all_books():
     table = (cursor.execute("SELECT * FROM books")).fetchall()
-    for list in table:
-        print (list)
+    for data in table:
+        print (f' {data[0]}) Title: {data[1]} - Author: {data[2]} - Date: {data[3]}')
 
 def retrieve_book(name):
-    data = (cursor.execute(f"SELECT Author, Title, Dates FROM books WHERE Author = {name}")).fetchall()
-    print(data)
+    table = (cursor.execute(f"SELECT * FROM books WHERE Title = {name}")).fetchone()
+    print(table)
+
+def creating_data(title, author, date):
+    (cursor.execute(f"INSERT INTO books (Title, Author, Dates) VALUES ({title}, {author}, {date})"))
+    conn_nwdb.commit()
